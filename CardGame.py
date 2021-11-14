@@ -6,28 +6,34 @@ class Card():
         self.numb = numb
     
 
-class Deck():   
-    def Shuffle(self):
-        temp = []
-        deck = []
-        types = ["hearts", "diamonds", "clubs", "spades"]
+class Cards():   
+    def __init__(self):
+        self.temp = []
+        self.deck = []
+        self.types = ["hearts", "diamonds", "clubs", "spades"]
 
-        for type in types:
+
+    def shuffle(self):
+        self.temp.clear()
+        self.deck.clear()
+        for type in self.types:
             for i in range(1,14):
-                temp.append(Card(type, i))
+                self.temp.append(Card(type, i))
         
-        while len(temp) != 0:
-            x = random.randrange(len(temp))
-            deck.append(temp[x])
-            temp.pop(x) 
+        while len(self.temp) != 0:
+            x = random.randrange(len(self.temp))
+            self.deck.append(self.temp[x])
+            self.temp.pop(x) 
             
-        return deck
+        
         
 class Player:
-    def __init__(self, name, bal):
-        self.name = name
-        self.bal = bal
+    def __init__(self):
         self.hand = []
+        self.bal = 0
+
+    def set_bat(self, bal):
+        self.bal = bal
         
     def bet(self, numb):
         pass
@@ -38,8 +44,8 @@ class Player:
     def check(self):
         pass
 
-    def get_card(self, type, numb):
-        self.hand.append(Card(type, numb))
+    def get_card(self, card):
+        self.hand.append(card)
         return self.hand
 
     def show_hand(self):
@@ -49,23 +55,3 @@ class Player:
 
 
 
-
-
-
-
-
-        
-
-
-        
-
-
-
-
-        
-
-
-
-
-            
-        
