@@ -19,8 +19,8 @@ class PokerGUI:
         #Making images global variables was recommended but this also doesn't work
         global card1_image
         global card2_image 
-        card1_image = ImageTk.PhotoImage(Image.open("red_back.png").resize((100,100), Image.ANTIALIAS))
-        card2_image = ImageTk.PhotoImage(Image.open("red_back.png").resize((100,100), Image.ANTIALIAS))
+        card1_image = ImageTk.PhotoImage(Image.open("Card_Images/red_back.png").resize((100,100), Image.ANTIALIAS))
+        card2_image = ImageTk.PhotoImage(Image.open("Card_Images/red_back.png").resize((100,100), Image.ANTIALIAS))
         
 
         #Fonts
@@ -88,7 +88,7 @@ class PokerGUI:
 
     def create_actions_frame(self):
         actions_frame = tk.Frame(self.window)
-        actions_frame.place( relx = .75, rely =.7, relheight= .3, relwidth= .2)
+        actions_frame.place( relx = .75, rely =.7, relheight= .3, relwidth= .25)
         bet_button = tk.Button(actions_frame, text = "Bet")
         bet_button.grid(row = 0, column=0)
         bet_entry = tk.Entry(actions_frame)
