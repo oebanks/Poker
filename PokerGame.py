@@ -22,7 +22,7 @@ class Poker():
     def give_hands(self):
         #Gives each player a card and removes that card from the deck.
         #This is done twice
-        for i in range(2):
+        for j in range(2):
             for i in range(len(self.playing)):
                 self.playing[i].get_card(self.deck[0])
                 self.deck.pop(0)
@@ -44,17 +44,17 @@ class Poker():
 
 
     def flop(self):
-        self.deck.pop(0)
         for i in range(3):
             self.table_cards.append(self.deck[0])
+            self.deck.pop(0)
 
     def turn(self):
-        self.deck.pop(0)
         self.table_cards.append(self.deck[0])
+        self.deck.pop(0)
 
     def river(self):
-        self.deck.pop(0)
         self.table_cards.append(self.deck[0])
+        self.deck.pop(0)
 
     def bet(self, player, num):
         #Checks that bet is more than current bet size. If yes, bet is removed from
@@ -94,15 +94,15 @@ class Poker():
 
 
 
-#texas = Poker()
+# texas = Poker()
 
-#Olanre = cg.Player()
+# Olanre = cg.Player()
 # Haden = cg.Player()
-#texas.add_player("Olanre")
+# texas.add_player(Olanre)
 # texas.add_player(Haden)
 # texas.give_hands()
-# Olanre.set_bal(1000)
-# print(Olanre.bal)
-# texas.bet(Olanre, 500)
-#print(repr(texas.playing))
+# # print(texas.playing)
+# print(f"{Olanre.hand[0].type},{Olanre.hand[0].num}")
+# print(f"{Haden.hand[0].type},{Haden.hand[0].num}")
+
 
