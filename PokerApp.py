@@ -220,6 +220,4 @@ class PokerGUI:
     def run(self):
         self.window.mainloop()      
 
-if __name__ == "__main__":
-    pokergui = PokerGUI()
-    pokergui.run()
+
